@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from './routes/Home';
+import RestaurantDetailPage from './routes/RestaurantDetailPage';
+import UpdatePage from './routes/UpdatePage';
 import './App.css';
+import { RestaurantsContextProvider } from './context/RestaurantsContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RestaurantsContextProvider>
+
+      <div className='container'>
+        <Router>
+        
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/restaurants/:id' component={RestaurantDetailPage}/>
+            <Route exact path='/restaurants/:id/update' component={UpdatePage}/>
+            <Route component={Home}/>
+          </Switch>
+        </Router>
+      </div>
+    </RestaurantsContextProvider>
   );
 }
 
