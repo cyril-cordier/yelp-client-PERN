@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/yelp-client-PERN/static/css/main.5890f46d.chunk.css",
-    "main.js": "/yelp-client-PERN/static/js/main.691f3cc6.chunk.js",
-    "main.js.map": "/yelp-client-PERN/static/js/main.691f3cc6.chunk.js.map",
+    "main.js": "/yelp-client-PERN/static/js/main.d20251de.chunk.js",
+    "main.js.map": "/yelp-client-PERN/static/js/main.d20251de.chunk.js.map",
     "runtime-main.js": "/yelp-client-PERN/static/js/runtime-main.42c204b3.js",
     "runtime-main.js.map": "/yelp-client-PERN/static/js/runtime-main.42c204b3.js.map",
-    "static/js/2.49e5d8bb.chunk.js": "/yelp-client-PERN/static/js/2.49e5d8bb.chunk.js",
-    "static/js/2.49e5d8bb.chunk.js.map": "/yelp-client-PERN/static/js/2.49e5d8bb.chunk.js.map",
+    "static/js/2.eef39694.chunk.js": "/yelp-client-PERN/static/js/2.eef39694.chunk.js",
+    "static/js/2.eef39694.chunk.js.map": "/yelp-client-PERN/static/js/2.eef39694.chunk.js.map",
     "static/js/3.ccbdbed5.chunk.js": "/yelp-client-PERN/static/js/3.ccbdbed5.chunk.js",
     "static/js/3.ccbdbed5.chunk.js.map": "/yelp-client-PERN/static/js/3.ccbdbed5.chunk.js.map",
     "index.html": "/yelp-client-PERN/index.html",
     "static/css/main.5890f46d.chunk.css.map": "/yelp-client-PERN/static/css/main.5890f46d.chunk.css.map",
-    "static/js/2.49e5d8bb.chunk.js.LICENSE.txt": "/yelp-client-PERN/static/js/2.49e5d8bb.chunk.js.LICENSE.txt"
+    "static/js/2.eef39694.chunk.js.LICENSE.txt": "/yelp-client-PERN/static/js/2.eef39694.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.42c204b3.js",
-    "static/js/2.49e5d8bb.chunk.js",
+    "static/js/2.eef39694.chunk.js",
     "static/css/main.5890f46d.chunk.css",
-    "static/js/main.691f3cc6.chunk.js"
+    "static/js/main.d20251de.chunk.js"
   ]
 }
