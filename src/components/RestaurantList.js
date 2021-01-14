@@ -6,14 +6,14 @@ import StarRating from './StarRating';
 import './style.css';
 
  const RestaurantList = (props) => {
-    const {restaurants, setRestaurants} = useContext(RestaurantsContext);
-    let history = useHistory()
-    useEffect(() => {
+     const {restaurants, setRestaurants} = useContext(RestaurantsContext);
+     let history = useHistory()
+     useEffect(() => {
 
         const fetchData = async () => {
             try {
                 const response = await RestaurantFinder.get("/")
-                console.log(response.data.data)
+                // console.log(response.data.data)
                 setRestaurants(response.data.data.restaurants);
             }catch(err) {
                 console.log(err)
@@ -21,7 +21,7 @@ import './style.css';
         }
 
         fetchData()
-    }, [])
+    }, [setRestaurants])
 
     const handleDelete = async (e, id) => {
         e.stopPropagation();
