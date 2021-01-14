@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useHistory, useLocation, useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder'
 
@@ -7,28 +7,42 @@ const AddReview = () => {
     const location = useLocation();
     const history = useHistory();
     
+    
 const [name, setName] = useState("")
 const [reviewText, setReviewText] = useState("")
 const [rating, setRating] = useState("1")
+const [error, setError] = useState("")
 
 const handleSubmitReview = async (e) => {
-    e.preventDefault()
-    try {
-        const response = await RestaurantFinder.post(`/${id}/addReview`, {
-            name, 
-            review: reviewText, 
-            rating
-        })
-        console.log(response)
-        history.push("/")
-        history.push(location.pathname)
-        
-        
-    } catch (err) {
-        console.log(err)
+    if(!error){
+        e.preventDefault()
+        try {
+            const response = await RestaurantFinder.post(`/${id}/addReview`, {
+                name, 
+                review: reviewText, 
+                rating
+            })
+            console.log(response)
+            history.push("/")
+            history.push(location.pathname)
+            
+            
+        } catch (err) {
+            console.log(err)
+        }
     }
     
 }
+
+useEffect(() => {
+    if(name === "" || reviewText === "") {
+        setError("Formulaire incomplet")
+        
+    }else{
+        setError("")
+    }
+}, [name, reviewText])
+
 
     return (
         <div className="mb-2">
@@ -60,6 +74,7 @@ const handleSubmitReview = async (e) => {
                 onChange={(e) => setReviewText(e.target.value)}
                 id="Review" cols="30" rows="10" className="form-control"></textarea>
             </div>
+            {error&&(name||reviewText)? <div className="text-danger">{error}</div> : ""}
             <button 
             type="submit"
             onClick={handleSubmitReview}

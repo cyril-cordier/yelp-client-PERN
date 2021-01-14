@@ -54,6 +54,7 @@ export default function UpdateRestaurant(props) {
                     <input value={priceRange} onChange={e => setPriceRange(e.target.value)} id="price_range" type="number" className="form-control" min="1" max="5"/>
                 </div>
                 <button type="submit" onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                <button onClick={() => history.push("/")} className=" btn btn-primary mx-5">Cancel</button>
             </form>
         </div>
     )

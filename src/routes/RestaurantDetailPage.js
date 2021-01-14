@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { RestaurantsContext } from '../context/RestaurantsContext';
 import RestaurantFinder from '../apis/RestaurantFinder';
 //import StarRating from '../components/StarRating';
@@ -10,6 +10,7 @@ import StarRating from '../components/StarRating';
 const RestaurantDetailPage = () => {
     const { id } = useParams();
     const { selectedRestaurant, setSelectedRestaurant } = useContext(RestaurantsContext);
+    let history = useHistory();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,8 +25,11 @@ const RestaurantDetailPage = () => {
         fetchData();
     }, [id, setSelectedRestaurant])
 
+   
+
     return (
         <div>
+            <button onClick={() => history.push("/")} className=" btn btn-primary"><i className="far fa-arrow-alt-circle-left"></i> Back</button>
             {selectedRestaurant && (
                 <>
                     <h1 className="text-center display-1">{selectedRestaurant.restaurant.name}</h1>
