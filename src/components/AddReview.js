@@ -17,12 +17,12 @@ const handleSubmitReview = async (e) => {
     if(!error){
         e.preventDefault()
         try {
-            const response = await RestaurantFinder.post(`/${id}/addReview`, {
+            await RestaurantFinder.post(`/${id}/addReview`, {
                 name, 
                 review: reviewText, 
                 rating
             })
-            console.log(response)
+            
             history.push("/")
             history.push(location.pathname)
             
